@@ -1,4 +1,6 @@
 # Memory Game 
+* [Play Game - Live Link](https://pwa-memory-game.web.app/)
+
 
 ## Resources
 * [Create React App](https://create-react-app.dev/)
