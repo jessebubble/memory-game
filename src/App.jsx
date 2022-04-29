@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Card from './components/Card'
 import Header from './components/Header';
+import useAppBadge from './hooks/useAppBadge';
 import shuffle from './util/shuffle';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
   const [pickTwo, setPickTwo] = useState(null); // second card selection
   const [disabled, setDisabled] = useState(null); // delay card selection so user doesn't click on all cards to reveal placement
   const [wins, setWins] = useState(0); //capture win streak
+  const [setBadge, clearBadge] = useAppBadge(); //appBadge from custom hook
 
   const handleClick = (card) => { //card selection 
     if (!disabled) {
@@ -22,7 +24,8 @@ function App() {
     setDisabled(false);
   };
 
-  const handleNewGame = () => {
+  const handleNewGame = () => { //start over - new game
+    clearBadge();
     setWins(0);
     handleTurn();
     setCards(shuffle);
@@ -59,13 +62,14 @@ function App() {
   useEffect(() => { // If player has found all matches, handle accordingly
     const checkWin = cards.filter((card) => !card.matched); // Check for any remaining card matches
 
-    if (cards.length && checkWin.length < 1) { // All matches made, handle win/badge counters
+    if (cards.length && checkWin.length < 1) { //all card matches made, handle win/badge counters+
       console.log('You win!');
       setWins(wins + 1);
       handleTurn();
+      setBadge();
       setCards(shuffle);
     }
-  }, [cards, wins]);
+  }, [cards, wins, setBadge]);
 
   return (
     <>

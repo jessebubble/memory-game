@@ -1,6 +1,7 @@
 # Memory Game 
 - Matching Memory Card Game built with `ReactJS` 
 - Deployed to `Firebase 🔥` 
+- PWA Offline Play
 
 ## Demo - Live Link 🔗
 * [Play Game - Live Link](https://pwa-memory-game.web.app/)
