@@ -4,7 +4,7 @@
 - PWA Offline Play - pending 🚧
 
 ## Demo - Live Link 🔗
-* [Play Game - Live Link](https://pwa-memory-game.web.app/)
+* [Play Game - Live Link](https://jessebubbleproject.web.app/)
 
 ![screenshot](/public/assets/screenshot.png)
 
